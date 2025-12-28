@@ -1,0 +1,133 @@
+/* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  --bg-dark: #2E3440; 
+  --card-dark: #3B4252;
+  --primary: #88C0D0; 
+  --primary-hover: #81A1C1;
+  --text-main: #ECEFF4;
+  --text-muted: #D8DEE9;
+  --border-color: #4C566A;
+  --danger: #BF616A;
+  --bg-light: #E5E9F0;
+  --card-light: #FFFFFF;
+  --text-light-main: #2E3440;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+}
+
+body.light { background-color: var(--bg-light); color: var(--text-light-main); }
+body.dark { background-color: var(--bg-dark); color: var(--text-main); }
+
+/* --- Fixed Header Structure --- */
+header {
+  background-color: var(--card-dark);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin: 0;
+}
+
+/* This is the parent container that holds the link and button */
+header nav {
+  display: flex;
+  align-items: center; 
+  gap: 20px; /* This creates the physical gap so they don't overlap */
+}
+
+header nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+header nav a:hover {
+  color: var(--primary);
+}
+
+/* --- Buttons --- */
+header button, .task-form button {
+  background-color: var(--primary);
+  color: var(--bg-dark);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: background 0.2s, transform 0.1s;
+}
+
+header button:hover, .task-form button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+/* --- Container & Rest of code --- */
+.container {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: var(--card-dark);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+body.light .container {
+  background-color: var(--card-light);
+  border-color: #D8DEE9;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.task-form input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  background-color: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: var(--text-main);
+  font-family: inherit;
+}
+
+body.light .task-form input {
+  background-color: #FFFFFF;
+  color: var(--text-light-main);
+  border-color: #D8DEE9;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  background-color: var(--bg-dark);
+  border-left: 4px solid var(--primary);
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+body.light .task-item {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E9F0;
+}
